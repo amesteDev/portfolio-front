@@ -43,6 +43,7 @@ const projBox = async() => {
 			</div>
 			<div class="back">
 			<p>${cor.description}</p>
+			<br/ >
 			<a href="${cor.github}">Github</a>
 			<a href="${cor.testdrive}">Provkör</a>
 			</div>

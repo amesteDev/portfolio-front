@@ -100,11 +100,15 @@
     }
     .back {
         position: absolute;
+        padding: 1em;
         background-color: #5D737E;
         transform: rotateY( 180deg);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.397);
         &:hover {
             box-shadow: 5px 5px 10px rgba(170, 170, 170, 0.397);
+        }
+        p {
+            color: $white;
         }
     }
     .projtitle {
