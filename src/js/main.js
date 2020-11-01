@@ -43,6 +43,8 @@ const projBox = async() => {
 			</div>
 			<div class="back">
 			<p>${cor.description}</p>
+			<a href="${cor.github}">Github</a>
+			<a href="${cor.testdrive}">Provkör</a>
 			</div>
 			</div>`);
             let frontdiv = getEl(`frontcard${cor.id}`);
