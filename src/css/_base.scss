@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather&family=Sansita+Swashed:wght@700&display=swap');
+//here be colors
+$black: #2C2C34;
+$grey: #3F4045;
+$blue: #5D737E;
+$lgrey: #D8D8F6;
+$white: #FCFCFC;
+$fjalla: 'Fjalla One',
+sans-serif;
+$merri: 'Merriweather',
+serif;
+$sansita: 'Sansita Swashed',
+sans-serif;
+@mixin headlinks {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a {
+        @content;
+    }
+}
+
+@mixin resp($size) {
+    @if $size==small {
+        @media (max-width: 900px) {
+            @content;
+        }
+    }
+    @else if $size==large {
+        @content;
+    }
+}

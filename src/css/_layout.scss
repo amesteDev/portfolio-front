@@ -1,0 +1,391 @@
+.projcards {
+    display: grid;
+    margin: auto;
+    width: 100vw;
+    @include resp(large) {
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 23% 23% 23% 23%;
+        grid-gap: 1%;
+    }
+    @include resp(small) {
+        grid-template-rows: 23% 23% 23% 23%;
+        grid-template-columns: 48% 48%;
+        grid-gap: 1%;
+        height: 100%;
+    }
+    .bigleft {
+        @include resp(large) {
+            width: 100%;
+            grid-area: 1/1/3/2;
+            .front,
+            .back {
+                border-top-left-radius: 2em;
+                border-bottom-left-radius: 2em;
+            }
+        }
+        @include resp(small) {
+            width: 95%;
+            height: 100%;
+            grid-area: 1/1/2/3;
+            .front,
+            .back {
+                border-radius: 0;
+            }
+        }
+    }
+    .smallleft {
+        @include resp(large) {
+            height: 200px;
+            width: 100%;
+            grid-area: 1/2/2/3;
+        }
+        @include resp(small) {
+            height: 100%;
+            width: 95%;
+            grid-area: 2/1/3/2;
+        }
+    }
+    .smallright {
+        @include resp(large) {
+            height: 200px;
+            width: 100%;
+            grid-area: 1/3/2/4;
+        }
+        @include resp(small) {
+            width: 95%;
+            grid-area: 2/2/3/3;
+        }
+    }
+    .bigright {
+        @include resp(large) {
+            width: 100%;
+            grid-area: 1/4/3/5;
+            .front,
+            .back {
+                border-top-right-radius: 2em;
+                border-bottom-right-radius: 2em;
+            }
+        }
+        @include resp(small) {
+            width: 95%;
+            height: 100%;
+            grid-area: 3/1/4/3;
+            .front,
+            .back {
+                border-radius: 0;
+            }
+        }
+    }
+    .bigbottom {
+        @include resp(large) {
+            height: 200px;
+            width: 100%;
+            grid-area: 2/2/3/4;
+        }
+        @include resp(small) {
+            height: 100%;
+            width: 95%;
+            grid-area: 4/1/5/3;
+        }
+    }
+}
+
+@include headlinks {
+    font-family: $fjalla;
+    color: $lgrey;
+}
+
+p {
+    font-family: $merri;
+    color: $black;
+}
+
+#educ {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.educard {
+    @include eduframe;
+    @include resp(large) {
+        margin: 3em;
+    }
+    @include resp(large) {
+        margin: 0.2em;
+        margin-top: 0.5em;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+}
+
+.edubottom {
+    @include edubottom;
+}
+
+#login-form {
+    @include loginform;
+}
+
+header,
+aside {
+    background-color: $black;
+    position: absolute;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    position: fixed;
+    z-index: 1000000;
+}
+
+nav {
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    z-index: 2200;
+}
+
+a {
+    color: $lgrey;
+    @include resp(small) {
+        font-size: 32px;
+    }
+    @include resp(large) {
+        font-size: 42px;
+    }
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+aside {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    @include resp(small) {
+        min-width: 304px;
+        width: 100%;
+    }
+    @include resp(large) {
+        min-width: 700px;
+        width: 35%;
+    }
+}
+
+h1 {
+    @include resp(small) {
+        font-size: 32px;
+    }
+    @include resp(large) {
+        font-size: 72px;
+    }
+}
+
+h2 {
+    @include resp(small) {
+        font-size: 24px;
+    }
+    @include resp(large) {
+        font-size: 36px;
+    }
+}
+
+h3 {
+    color: $black;
+    @include resp(small) {
+        font-size: 18px;
+    }
+    @include resp(large) {
+        font-size: 24px;
+    }
+}
+
+.hthree {
+    @include resp(small) {
+        font-size: 28px;
+    }
+    @include resp(large) {
+        font-size: 54px;
+    }
+    color: $lgrey;
+}
+
+.hfr {
+    font-family: $sansita;
+    color: $white;
+    @include resp(small) {
+        font-size: 26px;
+    }
+    @include resp(large) {
+        font-size: 42px;
+    }
+}
+
+.diagonal-split-background {
+    width: 100%;
+    min-height: 80vh;
+    background-image: linear-gradient(155deg, $blue 50%, $grey 50%);
+    padding: 2em;
+}
+
+.diagonal-split-background-other {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(28deg, $grey 50%, $blue 50%);
+    padding: 2em;
+}
+
+.topdiv {
+    background-image: url('../img/pexels-negative-space-97077.jpg');
+    height: 70vh;
+}
+
+.bottomdiv {
+    background-image: url('../img/t-bg.jpg');
+    background-size: cover;
+}
+
+.topdiv,
+.bottomdiv {
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.contact {
+    background-color: $blue;
+    min-height: 80vh;
+}
+
+.secret-other {
+    position: absolute;
+    background-image: linear-gradient(160deg, transparent 50%, $blue 50%);
+    min-height: 100vh;
+    top: 0;
+    width: 100%;
+}
+
+.secret {
+    position: absolute;
+    background-image: linear-gradient(160deg, $grey 50%, transparent 50%);
+    min-height: 100vh;
+    top: 0;
+    width: 100%;
+}
+
+.ptop {
+    transform: translateZ(-1px) scale(2);
+}
+
+.projcard {
+    @include projcard;
+}
+
+.loginwrap {
+    max-width: 400px;
+    margin: auto;
+    padding-top: 2em;
+}
+
+footer {
+    background-color: $black;
+    height: 150px;
+    color: $white;
+    font-family: 'Fjalla One';
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jobcards {
+    @include jobcards;
+}
+
+.contform {
+    @include loginform;
+}
+
+.pres-cont {
+    display: grid;
+    @include resp(large) {
+        grid-template-columns: 50% 50%;
+    }
+    @include resp(small) {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+}
+
+.pres {
+    @include resp(small) {
+        margin-top: 3em;
+    }
+    background-color: $grey;
+    padding: 2em;
+    h3 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .lighttext {
+        color: $white;
+        @include resp(large) {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+        @include resp(small) {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }
+}
+
+#wrapperModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.updateModal {
+    width: 70vw;
+    height: 70vh;
+    color: black;
+    background-color: #FCFCFC;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 1000;
+    .close {
+        font-family: $fjalla;
+        color: #aaa;
+        float: right;
+        font-size: 6em;
+        font-weight: bold;
+        &:hover,
+        &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.updateform {
+    @include updateform;
+}
